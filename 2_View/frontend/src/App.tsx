@@ -70,7 +70,7 @@ function App() {
 
       <ul>
         {data?.getQuotes?.map((x: SingleQuote, i: number) => {
-          return <Quote key={i} data={x} />;
+          return <Quote key={x.id} data={x} />;
         })}
       </ul>
     </div>
