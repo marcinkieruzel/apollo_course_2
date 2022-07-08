@@ -7,7 +7,7 @@ export const dataSourceOptions: DataSourceOptions = {
     "port": 5432,
     "username": "postgres",
     "password": "postgres",
-    "database": "nest_tutorial",
+    "database": "nest",
     "logging": false,
     "entities": [],
     "migrationsTableName": "migrations",

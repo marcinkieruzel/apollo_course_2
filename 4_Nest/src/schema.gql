@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreateTest2Input {
+  exampleField: Int!
+  lastName: String!
+  name: String!
+}
+
 input CreateTestInput {
   """Example field (placeholder)"""
   exampleField: Int!
@@ -9,17 +15,40 @@ input CreateTestInput {
 
 type Mutation {
   createTest(createTestInput: CreateTestInput!): Test!
+  createTest2(createTest2Input: CreateTest2Input!): Test2!
   removeTest(id: Int!): Test!
+  removeTest2(id: Int!): Test2!
   updateTest(updateTestInput: UpdateTestInput!): Test!
+  updateTest2(updateTest2Input: UpdateTest2Input!): Test2!
 }
 
 type Query {
   test(id: Int!): Test!
+  test2(id: Int!): Test2!
+  test22: [Test2!]!
 }
 
 type Test {
   """Example field (placeholder)"""
   exampleField: Int!
+}
+
+type Test2 {
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """LastName (placeholder)"""
+  lastName: String!
+
+  """Name (placeholder)"""
+  name: String!
+}
+
+input UpdateTest2Input {
+  exampleField: Int
+  id: Int!
+  lastName: String
+  name: String
 }
 
 input UpdateTestInput {

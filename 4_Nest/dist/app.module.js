@@ -14,17 +14,22 @@ const graphql_1 = require("@nestjs/graphql");
 const apollo_1 = require("@nestjs/apollo");
 const path_1 = require("path");
 const test_module_1 = require("./test/test.module");
+const ormconfig_1 = require("./ormconfig");
+const typeorm_1 = require("@nestjs/typeorm");
+const test2_module_1 = require("./test2/test2.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            (0, common_1.forwardRef)(() => typeorm_1.TypeOrmModule.forRoot(Object.assign(Object.assign({}, ormconfig_1.dataSourceOptions), { autoLoadEntities: true }))),
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloDriver,
                 autoSchemaFile: (0, path_1.join)(process.cwd(), 'src/schema.gql'),
                 sortSchema: true,
             }),
             test_module_1.TestModule,
+            test2_module_1.Test2Module,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

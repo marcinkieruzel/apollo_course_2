@@ -7,17 +7,22 @@ import {join} from 'path'
 import { TestModule } from './test/test.module';
 import { dataSourceOptions } from './ormconfig';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Test2Module } from './test2/test2.module';
 
 
 @Module({
   imports: [
     forwardRef(() => TypeOrmModule.forRoot({ ...dataSourceOptions, autoLoadEntities: true, })),
+    
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
     }),
+
     TestModule,
+
+    Test2Module,
   ],
   controllers: [AppController],
   providers: [AppService],
