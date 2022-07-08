@@ -17,6 +17,8 @@ const test_module_1 = require("./test/test.module");
 const ormconfig_1 = require("./ormconfig");
 const typeorm_1 = require("@nestjs/typeorm");
 const test2_module_1 = require("./test2/test2.module");
+const post_module_1 = require("./post/post.module");
+const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -30,6 +32,8 @@ AppModule = __decorate([
             }),
             test_module_1.TestModule,
             test2_module_1.Test2Module,
+            post_module_1.PostModule,
+            user_module_1.UserModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

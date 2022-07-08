@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreatePostInput {
+  """Body"""
+  body: String!
+
+  """Tytuł"""
+  title: String!
+}
+
 input CreateTest2Input {
   exampleField: Int!
   lastName: String!
@@ -13,19 +21,43 @@ input CreateTestInput {
   exampleField: Int!
 }
 
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 type Mutation {
+  createPost(createPostInput: CreatePostInput!): Post!
   createTest(createTestInput: CreateTestInput!): Test!
   createTest2(createTest2Input: CreateTest2Input!): Test2!
+  createUser(createUserInput: CreateUserInput!): User!
+  removePost(id: Int!): ID!
   removeTest(id: Int!): Test!
   removeTest2(id: Int!): Test2!
+  removeUser(id: Int!): User!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
   updateTest(updateTestInput: UpdateTestInput!): Test!
   updateTest2(updateTest2Input: UpdateTest2Input!): Test2!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Post {
+  """Body"""
+  body: String!
+
+  """ID encji"""
+  id: ID!
+
+  """Tytuł"""
+  title: String!
 }
 
 type Query {
+  post(id: Int!): Post!
   test(id: Int!): Test!
   test2(id: Int!): Test2!
   test22: [Test2!]!
+  user(id: Int!): User!
 }
 
 type Test {
@@ -47,6 +79,15 @@ type Test2 {
   name: String!
 }
 
+input UpdatePostInput {
+  """Body"""
+  body: String
+  id: ID!
+
+  """Tytuł"""
+  title: String
+}
+
 input UpdateTest2Input {
   exampleField: Int
   id: Int!
@@ -58,4 +99,15 @@ input UpdateTestInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+type User {
+  """Example field (placeholder)"""
+  exampleField: Int!
 }

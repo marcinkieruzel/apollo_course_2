@@ -8,6 +8,8 @@ import { TestModule } from './test/test.module';
 import { dataSourceOptions } from './ormconfig';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Test2Module } from './test2/test2.module';
+import { PostModule } from './post/post.module';
+import { UserModule } from './user/user.module';
 
 
 @Module({
@@ -23,6 +25,10 @@ import { Test2Module } from './test2/test2.module';
     TestModule,
 
     Test2Module,
+
+    PostModule,
+
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
