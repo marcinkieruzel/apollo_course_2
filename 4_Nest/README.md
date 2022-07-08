@@ -18,6 +18,7 @@
     "name": "Leanne Graham",
     "username": "Bret",
     "email": "Sincere@april.biz",
-  },```
+  },
+  ```
   5. Skonfiguruj server apollo z podejściem code-first osobno dla obu przypadków
   6. Połącz obie encje relacją - dopasuj ustawienia apollo
