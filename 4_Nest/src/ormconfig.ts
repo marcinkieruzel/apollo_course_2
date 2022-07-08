@@ -1,4 +1,5 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
+import { Test2 } from './test2/entities/test2.entity';
 
 
 export const dataSourceOptions: DataSourceOptions = {
@@ -9,7 +10,7 @@ export const dataSourceOptions: DataSourceOptions = {
     "password": "postgres",
     "database": "nest",
     "logging": false,
-    "entities": [],
+    "entities": [Test2],
     "migrationsTableName": "migrations",
     "migrations": ["dist/migration/*.js"],
     // "subscribers": [BadgeSubscriber, ChallangeSubscriber, OrderSubscriber],

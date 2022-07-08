@@ -37,6 +37,9 @@ type Test2 {
   """Example field (placeholder)"""
   exampleField: Int!
 
+  """ID (placeholder)"""
+  id: ID!
+
   """LastName (placeholder)"""
   lastName: String!
 

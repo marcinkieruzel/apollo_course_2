@@ -11,22 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Test2 = void 0;
 const graphql_1 = require("@nestjs/graphql");
+const typeorm_1 = require("typeorm");
 let Test2 = class Test2 {
 };
 __decorate([
+    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, graphql_1.Field)(() => graphql_1.ID, { description: 'ID (placeholder)' }),
+    __metadata("design:type", Number)
+], Test2.prototype, "id", void 0);
+__decorate([
     (0, graphql_1.Field)(() => graphql_1.Int, { description: 'Example field (placeholder)' }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], Test2.prototype, "exampleField", void 0);
 __decorate([
+    (0, typeorm_1.Column)(),
     (0, graphql_1.Field)(() => String, { description: 'Name (placeholder)' }),
     __metadata("design:type", String)
 ], Test2.prototype, "name", void 0);
 __decorate([
+    (0, typeorm_1.Column)(),
     (0, graphql_1.Field)(() => String, { description: 'LastName (placeholder)' }),
     __metadata("design:type", String)
 ], Test2.prototype, "lastName", void 0);
 Test2 = __decorate([
-    (0, graphql_1.ObjectType)()
+    (0, graphql_1.ObjectType)(),
+    (0, typeorm_1.Entity)()
 ], Test2);
 exports.Test2 = Test2;
 //# sourceMappingURL=test2.entity.js.map

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dataSourceOptions = void 0;
 const typeorm_1 = require("typeorm");
+const test2_entity_1 = require("./test2/entities/test2.entity");
 exports.dataSourceOptions = {
     "type": "postgres",
     "host": "localhost",
@@ -10,7 +11,7 @@ exports.dataSourceOptions = {
     "password": "postgres",
     "database": "nest",
     "logging": false,
-    "entities": [],
+    "entities": [test2_entity_1.Test2],
     "migrationsTableName": "migrations",
     "migrations": ["dist/migration/*.js"],
 };

@@ -5,8 +5,8 @@ import { UpdateTest2Input } from './dto/update-test2.input';
 export declare class Test2Resolver {
     private readonly test2Service;
     constructor(test2Service: Test2Service);
-    createTest2(createTest2Input: CreateTest2Input): CreateTest2Input | "This action adds a new test2";
-    findAll(): Test2[];
+    createTest2(createTest2Input: CreateTest2Input): Promise<CreateTest2Input & Test2>;
+    findAll(): Promise<Test2[]>;
     findOne(id: number): Test2;
     updateTest2(updateTest2Input: UpdateTest2Input): string | {
         name: string;
